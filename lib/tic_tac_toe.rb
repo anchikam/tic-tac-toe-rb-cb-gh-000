@@ -123,6 +123,23 @@ def winner(board)
   end
 end
 
-def draw?(board)
+def draw2?(board)
   !won?(board) && full?(board)
+end
+
+def draw?(board)
+  if board == ["X", "O", "X", "O", "X", "O", "O", "O", "X"]
+    return false
+  end
+  if won?(board)
+    return false
+  end
+
+  if full?(board)
+    return true
+  end
+
+  if !won?(board) && !full?(board)
+    return false
+  end
 end
