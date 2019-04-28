@@ -54,12 +54,10 @@ def turn(board)
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(board, index)
-      move(board, index, "X")
-      display_board(board)
-    else
-      puts "You entered invalid index"
       turn(board)
     end
+    move(board, index, current_player(board))
+    display_board(board)
 end
 
 def position_taken?(board, location)
