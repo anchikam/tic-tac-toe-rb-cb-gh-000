@@ -21,7 +21,6 @@ def input_to_index(n)
   n = n.to_i - 1
 end
 
-
 def move(board, index, current_player)
   board[index] = current_player
 end
