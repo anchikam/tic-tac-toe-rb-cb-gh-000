@@ -44,17 +44,30 @@ def over?(board)
 end
 
 def turn(board)
-  puts "Please enter 1-9"
-  input = gets.strip
-  if !valid_move?(board, input)
-    turn(board)
-  end
-  move(board, input, current_player(board))
-  display_board(board)
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(board, index)
+      move(board, index, "X")
+      display_board(board)
+    else
+      puts "You entered invalid index"
+      turn(board)
+    end
 end
 
 def position_taken?(board, location)
   !(board[location].nil? || board[location] == " ")
+end
+
+def turn_count(board)
+  count = 0
+  board.each do |b|
+    if b != " " and b != ""
+      count += 1
+    end
+  end
+  count
 end
 
 def current_player(board)
