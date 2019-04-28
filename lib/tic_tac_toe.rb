@@ -73,11 +73,8 @@ def current_player(board)
 end
 
 def play(board)
-  while !won?(board)
+  while !over?(board)
     turn(board)
-    if over?(board)
-      break
-    end
   end
 end
 
