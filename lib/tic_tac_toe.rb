@@ -100,7 +100,7 @@ def won?(board)
     win = (xwin || owin)
     if win
       return win_combination # return the win_combination indexes that won.
-    elsif full?(board)
+    elsif full?(board) && !win
       return false
     end
   end
