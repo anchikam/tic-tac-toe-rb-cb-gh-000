@@ -67,13 +67,7 @@ def position_taken?(board, location)
 end
 
 def turn_count(board)
-  count = 0
-  board.each do |b|
-    if b != " " and b != ""
-      count += 1
-    end
-  end
-  count
+  board.count{|token| token == "X" || token == "O"}
 end
 
 def current_player(board)
