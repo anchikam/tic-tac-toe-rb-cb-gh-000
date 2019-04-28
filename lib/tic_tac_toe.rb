@@ -30,6 +30,12 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+def empty?(board)
+  eboard = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  if board == eboard
+    return true
+  end
+end
 
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
