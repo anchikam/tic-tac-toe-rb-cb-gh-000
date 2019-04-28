@@ -27,3 +27,11 @@ def turn(board)
   move(board, input, current_player(board))
   display_board(board)
 end
+
+def position_taken?(board, location)
+  !(board[location].nil? || board[location] == " ")
+end
+
+def current_player(board)
+  turn_count(board) % 2 == 0 ? "X": "O"
+end
