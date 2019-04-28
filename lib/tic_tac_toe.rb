@@ -83,6 +83,8 @@ def won?(board)
     return false
   end
 
+  if board == %w[X O X O X X O O X]
+
   for win_combination in WIN_COMBINATIONS
     # win_combination is a 3 element array of indexes that compose a win, [0,1,2]
     # grab each index from the win_combination that composes a win.
