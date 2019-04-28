@@ -63,3 +63,22 @@ def play(board)
     c += 1
   end
 end
+
+
+def winner(board)
+  if board == ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
+    return nil
+  end
+  if full?(board) || !won?(board)
+    return nil
+  end
+  win_combination = won?(board)
+  b = board[win_combination[0]]
+  if b == "X"
+    return "X"
+  elsif b == "O"
+    return "O"
+  else
+    return nil
+  end
+end
