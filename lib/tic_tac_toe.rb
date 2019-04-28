@@ -73,10 +73,8 @@ def current_player(board)
 end
 
 def play(board)
-  c = 0
-  while c <= 8
+  while !won?(board)
     turn(board)
-    c += 1
   end
 end
 
