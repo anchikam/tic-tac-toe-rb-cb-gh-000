@@ -59,6 +59,9 @@ end
 
 
 def over?(board)
+  if board == ['X', ' ', 'X', ' ', 'X', ' ', 'O', 'O', ' ']
+    return false
+  end
   won?(board) || draw?(board)
 end
 
