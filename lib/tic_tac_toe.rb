@@ -6,6 +6,15 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+def move(board, index, current_player = "X")
+  board[index] = current_player
+end
+
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
+end
+
+
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
 end
@@ -34,4 +43,12 @@ end
 
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X": "O"
+end
+
+def play(board)
+  c = 0
+  while c <= 8
+    turn(board)
+    c += 1
+  end
 end
