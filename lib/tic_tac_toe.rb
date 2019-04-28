@@ -76,7 +76,7 @@ def current_player(board)
 end
 
 def play(board)
-  while !over?(board)
+  while !over?(board) && !draw?(board)
     turn(board)
   end
 end
